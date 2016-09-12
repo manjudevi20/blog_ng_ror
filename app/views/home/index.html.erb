@@ -1,0 +1,42 @@
+<div class="container-fluid" ng-app="receta">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h1 ng-if="name">Hello, {{name}}</h1>
+    </div>
+    <div class="panel-body">
+      <form class="form-inline">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Enter your name" autofocus ng-model="name">
+        </div>
+      </form>
+      <div class="row" ng-controller="todocontroller">
+        <div class="col-md-12">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phoneno</th>
+                <th>Age</th>
+                <th>Information</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="contact in contact_details">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phno}}</td>
+            <td>{{contact.age}}</td>
+            <td>{{contact.info}}</td>
+            <td><button class="btn btn-default" ng-click="editvalue();"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit</button></td>
+            <td><button class="btn btn-danger" ng-click="deletevalue($index);"><span class="glyphicon glyphicon-remove" aria-hidden="true"> Delete</button></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
